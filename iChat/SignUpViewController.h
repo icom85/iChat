@@ -10,8 +10,9 @@
 #import "CCInputValidator.h"
 #import "CCParseData.h"
 #import "CCInfoAlert.h"
+#import "CCAnimationProvider.h"
 
-@interface SignUpViewController : UIViewController
+@interface SignUpViewController : UIViewController<UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *firstNameInput;
 

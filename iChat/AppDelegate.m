@@ -19,6 +19,12 @@
     [Parse setApplicationId:@"5BoPvtVWjsjj42H8pBaVaI4Ojz6gNXNNkfUo1ibt"
                   clientKey:@"guGLsc0wY6jIJSbbYEPxSdliqJqemp2YHCrNmbmT"];
     
+    [PubNub setDelegate:self];
+    
+    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
+    testObject[@"foo"] = @"bar";
+    [testObject saveInBackground];
+    
     return YES;
 }
 

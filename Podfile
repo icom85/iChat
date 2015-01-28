@@ -6,6 +6,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 target 'iChat' do
 
 pod 'Parse', '~> 1.6'
+pod 'PubNub', '~> 3.7'
 
 end
 

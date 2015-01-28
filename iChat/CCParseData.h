@@ -21,4 +21,7 @@
 + (void)requestPasswordResetlWithBlock:(NSString *)email
                                 block :(void (^)(BOOL succeeded, NSError *error))block;
 
++ (void)loadUserDataWithBlock:(void (^)(NSArray *objects, NSError *error))block;
+
+
 @end

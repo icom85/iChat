@@ -16,6 +16,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.passwordInput.delegate = self;
+    self.emailInput.delegate = self;
+    self.repeatPasswordInput.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,6 +28,20 @@
 
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [self.view endEditing:true];
+}
+
+-(void)textFieldDidBeginEditing:(UITextField *)sender {
+    if ([sender isEqual: self.emailInput] || [sender isEqual: self.passwordInput] || [sender isEqual: self.repeatPasswordInput]) {
+        if  (self.view.frame.origin.y >= 0) {
+            [CCAnimationProvider setView:self.view movedUp:YES];
+        }
+    }
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    if ([textField isEqual: self.emailInput] || [textField isEqual: self.passwordInput] || [textField isEqual: self.repeatPasswordInput]) {
+        [CCAnimationProvider setView:self.view movedUp:NO];
+    }
 }
 
 - (IBAction)onSignUpClick:(id)sender {

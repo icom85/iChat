@@ -2,12 +2,15 @@ PODS:
   - Bolts (1.1.3)
   - Parse (1.6.2):
     - Bolts (~> 1.1)
+  - PubNub (3.7.7)
 
 DEPENDENCIES:
   - Parse (~> 1.6)
+  - PubNub (~> 3.7)
 
 SPEC CHECKSUMS:
   Bolts: 3db0a875235e0c9042b013af13af0f00f79b102c
   Parse: 60d65108fe39da77ec16c9e51d74b4d296b21424
+  PubNub: e41b383a8e1096a57649ddbdd878fce20ae859ad
 
 COCOAPODS: 0.34.4

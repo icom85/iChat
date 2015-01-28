@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		28AF8C6A3794D94AB4BA2CF5 /* libPods-iChat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BCE793C67230714C45A94A52 /* libPods-iChat.a */; };
+		84768FF11A79783E00CF04D2 /* CCAnimationProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 84768FF01A79783E00CF04D2 /* CCAnimationProvider.m */; };
+		84768FF41A797FA600CF04D2 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84768FF31A797FA600CF04D2 /* HomeViewController.m */; };
 		84B2B2B51A781FE70087EAB3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B2B2B41A781FE70087EAB3 /* main.m */; };
 		84B2B2B81A781FE70087EAB3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B2B2B71A781FE70087EAB3 /* AppDelegate.m */; };
 		84B2B2BE1A781FE80087EAB3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B2B2BC1A781FE80087EAB3 /* Main.storyboard */; };
@@ -33,6 +35,10 @@
 
 /* Begin PBXFileReference section */
 		1B45869827CEE995E45ADB0E /* Pods-iChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-iChat/Pods-iChat.release.xcconfig"; sourceTree = "<group>"; };
+		84768FEF1A79783E00CF04D2 /* CCAnimationProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAnimationProvider.h; sourceTree = "<group>"; };
+		84768FF01A79783E00CF04D2 /* CCAnimationProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAnimationProvider.m; sourceTree = "<group>"; };
+		84768FF21A797FA600CF04D2 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		84768FF31A797FA600CF04D2 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		84B2B2AF1A781FE70087EAB3 /* iChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B2B2B31A781FE70087EAB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84B2B2B41A781FE70087EAB3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -108,11 +114,11 @@
 		84B2B2B11A781FE70087EAB3 /* iChat */ = {
 			isa = PBXGroup;
 			children = (
+				84B2B2B61A781FE70087EAB3 /* AppDelegate.h */,
+				84B2B2B71A781FE70087EAB3 /* AppDelegate.m */,
 				84B2B2DF1A7821550087EAB3 /* Helpers */,
 				84B2B2E31A782AEE0087EAB3 /* Data */,
 				84B2B2D81A78209E0087EAB3 /* ViewControllers */,
-				84B2B2B61A781FE70087EAB3 /* AppDelegate.h */,
-				84B2B2B71A781FE70087EAB3 /* AppDelegate.m */,
 				84B2B2BC1A781FE80087EAB3 /* Main.storyboard */,
 				84B2B2BF1A781FE80087EAB3 /* Images.xcassets */,
 				84B2B2C11A781FE80087EAB3 /* LaunchScreen.xib */,
@@ -154,6 +160,8 @@
 				84B2B2DA1A7820C00087EAB3 /* LogInViewController.m */,
 				84B2B2DC1A7821150087EAB3 /* SignUpViewController.h */,
 				84B2B2DD1A7821150087EAB3 /* SignUpViewController.m */,
+				84768FF21A797FA600CF04D2 /* HomeViewController.h */,
+				84768FF31A797FA600CF04D2 /* HomeViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -165,6 +173,8 @@
 				84B2B2E51A782B120087EAB3 /* CCInputValidator.m */,
 				84B2B2E71A7835F40087EAB3 /* CCInfoAlert.h */,
 				84B2B2E81A7835F40087EAB3 /* CCInfoAlert.m */,
+				84768FEF1A79783E00CF04D2 /* CCAnimationProvider.h */,
+				84768FF01A79783E00CF04D2 /* CCAnimationProvider.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -323,9 +333,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				84B2B2E91A7835F40087EAB3 /* CCInfoAlert.m in Sources */,
+				84768FF11A79783E00CF04D2 /* CCAnimationProvider.m in Sources */,
 				84B2B2E21A782A610087EAB3 /* CCParseData.m in Sources */,
 				84B2B2B81A781FE70087EAB3 /* AppDelegate.m in Sources */,
 				84B2B2B51A781FE70087EAB3 /* main.m in Sources */,
+				84768FF41A797FA600CF04D2 /* HomeViewController.m in Sources */,
 				84B2B2DE1A7821150087EAB3 /* SignUpViewController.m in Sources */,
 				84B2B2DB1A7820C00087EAB3 /* LogInViewController.m in Sources */,
 				84B2B2E61A782B120087EAB3 /* CCInputValidator.m in Sources */,
