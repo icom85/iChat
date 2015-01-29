@@ -30,7 +30,7 @@
 }
 
 + (void)loadUserDataWithBlock:(void (^)(NSArray *objects, NSError *error))block {
-    PFQuery *query = [PFQuery queryWithClassName:@"User"];
+    PFQuery *query = [PFUser query];
     [query findObjectsInBackgroundWithBlock:block];
 }
 

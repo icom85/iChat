@@ -21,6 +21,7 @@
 		84B2B2E21A782A610087EAB3 /* CCParseData.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B2B2E11A782A610087EAB3 /* CCParseData.m */; };
 		84B2B2E61A782B120087EAB3 /* CCInputValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B2B2E51A782B120087EAB3 /* CCInputValidator.m */; };
 		84B2B2E91A7835F40087EAB3 /* CCInfoAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B2B2E81A7835F40087EAB3 /* CCInfoAlert.m */; };
+		84D7A4FD1A7ACB0600CE338A /* ChatRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D7A4FC1A7ACB0600CE338A /* ChatRoomViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		84B2B2E51A782B120087EAB3 /* CCInputValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCInputValidator.m; sourceTree = "<group>"; };
 		84B2B2E71A7835F40087EAB3 /* CCInfoAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCInfoAlert.h; sourceTree = "<group>"; };
 		84B2B2E81A7835F40087EAB3 /* CCInfoAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCInfoAlert.m; sourceTree = "<group>"; };
+		84D7A4FB1A7ACB0600CE338A /* ChatRoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatRoomViewController.h; sourceTree = "<group>"; };
+		84D7A4FC1A7ACB0600CE338A /* ChatRoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatRoomViewController.m; sourceTree = "<group>"; };
 		BCE793C67230714C45A94A52 /* libPods-iChat.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iChat.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF7D58B0BC3837783D6C84A5 /* Pods-iChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iChat/Pods-iChat.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -162,6 +165,8 @@
 				84B2B2DD1A7821150087EAB3 /* SignUpViewController.m */,
 				84768FF21A797FA600CF04D2 /* HomeViewController.h */,
 				84768FF31A797FA600CF04D2 /* HomeViewController.m */,
+				84D7A4FB1A7ACB0600CE338A /* ChatRoomViewController.h */,
+				84D7A4FC1A7ACB0600CE338A /* ChatRoomViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -341,6 +346,7 @@
 				84B2B2DE1A7821150087EAB3 /* SignUpViewController.m in Sources */,
 				84B2B2DB1A7820C00087EAB3 /* LogInViewController.m in Sources */,
 				84B2B2E61A782B120087EAB3 /* CCInputValidator.m in Sources */,
+				84D7A4FD1A7ACB0600CE338A /* ChatRoomViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

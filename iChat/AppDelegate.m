@@ -19,13 +19,98 @@
     [Parse setApplicationId:@"5BoPvtVWjsjj42H8pBaVaI4Ojz6gNXNNkfUo1ibt"
                   clientKey:@"guGLsc0wY6jIJSbbYEPxSdliqJqemp2YHCrNmbmT"];
     
-    [PubNub setDelegate:self];
+    //[PubNub setDelegate:self];
+    self.pubNub = [PubNub connectingClientWithConfiguration:[PNConfiguration defaultConfiguration]
+                                                   delegate:self andSuccessBlock:^(NSString *origin) {
+                                                       
+                                                       NSLog(@"Connected to: %@", origin);
+                                                   }
+                                                 errorBlock:^(PNError *error) {
+                                                     
+                                                     if (error == nil) {
+                                                         
+                                                         // PubNub client may pass 'nil' here to inform that client can't connect at
+                                                         // this moment because network check not completed (reachability sometime
+                                                         // can be slow).
+                                                         // So here we have a chance to update interface and provide user information
+                                                         // that we will connect a bit later.
+                                                     }
+                                                     else {
+                                                         
+                                                         // Check error.code to find out real reason of error. Always use constants
+                                                         // stored in PNErrorCodes.h for comparison.
+                                                     }
+                                                 }];
     
-    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
-    testObject[@"foo"] = @"bar";
-    [testObject saveInBackground];
+    // Asking to subscribe on channel with enabled presence observation
+    [self.pubNub subscribeOn:@[[PNChannel channelWithName:@"a" shouldObservePresence:YES]]];
+    
+    // Sending "hi" message to all subscribers on "a" channel
+    [self.pubNub sendMessage:@"hello from PubNub iOS!" toChannel:[PNChannel channelWithName:@"a"]];
+
     
     return YES;
+}
+
+- (void)pubnubClient:(PubNub *)client didSubscribeOn:(NSArray *)channelObjects {
+    
+    NSLog(@"PubNub client successfully subscribed on channels: %@", channelObjects);
+}
+
+// Called in case if client configured to restore connection and subscription after network
+//failure. Mean that client is about to restore subscription on previously subscribed channels.
+- (void)pubnubClient:(PubNub *)client willRestoreSubscriptionOn:(NSArray *)channelObjects {
+    
+    NSLog(@"PubNub client resuming subscription on: %@", channelObjects);
+}
+
+// Called at the end of subscription restore process to notify delegate that subscription has been
+// restored on previously active channels.
+- (void)pubnubClient:(PubNub *)client didRestoreSubscriptionOn:(NSArray *)channelObjects {
+    
+    NSLog(@"PubNub client successfully restored subscription on channels: %@", channelObjects);
+}
+
+// Sometimes subscription may fail and we need to handle this situation and check error.code for
+// concrete failure reason.
+- (void)pubnubClient:(PubNub *)client subscriptionDidFailWithError:(NSError *)error {
+    
+    NSLog(@"PubNub client failed to subscribe because of error: %@", error);
+}
+
+// Will be called each time when new message arrive to one of channels on which client has been
+// subscribed earlier.
+- (void)pubnubClient:(PubNub *)client didReceiveMessage:(PNMessage *)message {
+    
+    NSLog(@"PubNub client received message: %@", message);
+}
+
+// If subscribed on channel with enabled presence observation this delegate will be called each
+// time when presence list will be modified or one of subscribers will change his state on channel.
+- (void)pubnubClient:(PubNub *)client didReceivePresenceEvent:(PNPresenceEvent *)event {
+    
+    NSLog(@"PubNub client received presence event: %@", event);
+}
+
+// Called on delegate when scheduled message sending has been reached in queue and about to send to
+// PubNub service.
+- (void)pubnubClient:(PubNub *)client willSendMessage:(PNMessage *)message {
+    
+    NSLog(@"PubNub client is about to send message: %@", message);
+}
+
+// Called each time when message sending has been confirmed by service response (this message may
+// appear on other subscribers side earlier then sending confirmation may arrive because PubNub too
+// fast)
+- (void)pubnubClient:(PubNub *)client didSendMessage:(PNMessage *)message {
+    
+    NSLog(@"PubNub client sent message: %@", message);
+}
+
+- (void)pubnubClient:(PubNub *)client didFailMessageSend:(PNMessage *)message
+           withError:(PNError *)error {
+    
+    NSLog(@"PubNub client failed to send message '%@' because of error: %@", message, error);
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

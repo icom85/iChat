@@ -60,7 +60,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     PFObject *obj = [userData objectAtIndex:indexPath.row];
     cell.textLabel.text = obj[@"username"];
-    //cell.detailTextLabel.text = obj[@"firstName"];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@/%@", obj[@"firstName"], obj[@"lastName"]];
     
     return cell;
     
@@ -68,7 +68,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     index = indexPath.row;
-    [self performSegueWithIdentifier:@"partyDetailsSegue" sender:self];
+    [self performSegueWithIdentifier:@"chatRoomSegue" sender:self];
 }
 
 

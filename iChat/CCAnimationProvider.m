@@ -10,20 +10,18 @@
 
 @implementation CCAnimationProvider
 
-#define kOFFSET_FOR_KEYBOARD 150.0
-
-+(void)setView:(UIView *)currentView movedUp:(BOOL)movedUp {
++(void)setView:(UIView *)currentView movedUp:(BOOL)movedUp withOffset:(int) offset {
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.3];
     
     CGRect rect = currentView.frame;
     if (movedUp) {
-        rect.origin.y -= kOFFSET_FOR_KEYBOARD;
-        rect.size.height += kOFFSET_FOR_KEYBOARD;
+        rect.origin.y -= offset;
+        rect.size.height += offset;
     }
     else {
-        rect.origin.y += kOFFSET_FOR_KEYBOARD;
-        rect.size.height -= kOFFSET_FOR_KEYBOARD;
+        rect.origin.y += offset;
+        rect.size.height -= offset;
     }
     currentView.frame = rect;
     

@@ -11,6 +11,6 @@
 
 @interface CCAnimationProvider : NSObject
 
-+(void)setView:(UIView *)currentView movedUp:(BOOL)movedUp;
++(void)setView:(UIView *)currentView movedUp:(BOOL)movedUp withOffset:(int) offset;
 
 @end

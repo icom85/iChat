@@ -12,6 +12,9 @@
 
 @end
 
+static const int OFFSET = 150;
+static const int BOTTOM_OFFSET = 200;
+
 @implementation SignUpViewController
 
 - (void)viewDidLoad {
@@ -31,16 +34,22 @@
 }
 
 -(void)textFieldDidBeginEditing:(UITextField *)sender {
-    if ([sender isEqual: self.emailInput] || [sender isEqual: self.passwordInput] || [sender isEqual: self.repeatPasswordInput]) {
+    if ([sender isEqual: self.emailInput] || [sender isEqual: self.passwordInput]) {
         if  (self.view.frame.origin.y >= 0) {
-            [CCAnimationProvider setView:self.view movedUp:YES];
+            [CCAnimationProvider setView:self.view movedUp:YES withOffset:OFFSET];
+        }
+    } else if ([sender isEqual: self.repeatPasswordInput]){
+        if  (self.view.frame.origin.y >= 0) {
+            [CCAnimationProvider setView:self.view movedUp:YES withOffset:BOTTOM_OFFSET];
         }
     }
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-    if ([textField isEqual: self.emailInput] || [textField isEqual: self.passwordInput] || [textField isEqual: self.repeatPasswordInput]) {
-        [CCAnimationProvider setView:self.view movedUp:NO];
+    if ([textField isEqual: self.emailInput] || [textField isEqual: self.passwordInput]) {
+        [CCAnimationProvider setView:self.view movedUp:NO withOffset:OFFSET];
+    } else if ([textField isEqual: self.repeatPasswordInput]){
+        [CCAnimationProvider setView:self.view movedUp:NO withOffset:BOTTOM_OFFSET];
     }
 }
 
